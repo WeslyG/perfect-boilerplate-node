@@ -9,6 +9,17 @@ express - 4.16.4
 
 @babel/preset-env - 7.3.4
 
+### How to use? 
+
+- clone this repo
+- change any source in app.js or ./src
+- ???
+- npm start for dev
+- npm run build for production build
+- for docker production build run this
+  - docker build -t myloveapp . 
+  - docker push myloveapp:latest
+
 
 ### This repo include
 - Nodejs 10+
