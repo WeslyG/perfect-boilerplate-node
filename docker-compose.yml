@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  front:
+    image: weslyg/wc-front:test
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+  mongo:
+    image: mongo
+    ports:
+    - 27017:27017
+  backend:
+    # build: .
+    image: weslyg/wc-back:latest
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    environment:
+      - PORT=3000
+      - DB_HOST=mongodb://mongo/
+      - DB_NAME=prod_db
+      # - ADMIN_NAME=adminName
+      # - ADMIN_LOGIN=admin
+      # - ADMIN_PASSWORD=password
+      # - SECRET=secrets
+      # - SALT_ROUND=10
