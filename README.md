@@ -1,13 +1,11 @@
 # Perfect template for start your nodejs backend server (api)
 
-#### Last Update 2019.02
+#### Last Update 2019.03
 webpack -  4.29.6
 
 express - 4.16.4
 
-@babel/core - 7.3.4
-
-@babel/preset-env - 7.3.4
+@babel/* - 7.3.4
 
 ### This repo include
 
@@ -21,7 +19,7 @@ express - 4.16.4
   - Not need node/webpack/any other app on your CI agents
 - Debug enabled in vscode (connect to process)
 - npm-shrinkwrap and yarn.lock for dep
-- simple and lightweight (8 dep only)
+- simple and lightweight (9 dep only)
 
 ### How to use? 
 
@@ -36,9 +34,10 @@ express - 4.16.4
 
 ### TODO
 
-- Docs add postman and swagger
-- Config in files for local development and Env for docker
-- Eslint
-- Metrics to graphite
-- Logs to Elasticsearch
-- wrap to cli
+- [x] Support Promices and await 
+- [ ] Docs add postman and swagger
+- [ ] Config in files for local development and Env for docker
+- [ ] Eslint
+- [ ] Metrics to graphite
+- [ ] Logs to Elasticsearch
+- [ ] Wrap to cli

@@ -9,7 +9,7 @@ module.exports = {
     aggregateTimeout: 100
   },
   devtool: 'eval',
-  entry: './app.js',
+  entry: ["@babel/polyfill", "./app.js"],
   target: 'node',
   module: {
     rules: [{
@@ -25,10 +25,10 @@ module.exports = {
   },
   plugins: [
     new NodemonPlugin(),
-    new CleanWebpackPlugin(['dist/*']),
+    new CleanWebpackPlugin(['build/*']),
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.dev.js'
   },
 };

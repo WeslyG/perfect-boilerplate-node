@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './app.js',
+  entry: ["@babel/polyfill", "./app.js"],
   target: 'node',
   module: {
     rules: [{
@@ -17,7 +17,7 @@ module.exports = {
     }]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.prod.js'
   },
 };
