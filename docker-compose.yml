@@ -1,12 +1,6 @@
 version: '3'
 
 services:
-  # front:
-  #   image: images/name:version 
-  #   ports:
-  #     - 80:80
-  #   depends_on:
-  #     - backend
   backend:
     build: .
     ports:

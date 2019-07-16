@@ -1,6 +1,6 @@
 {
   "name": "perfect-boilerplate-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Template for create your nodejs backend app in one minute",
   "private": true,
   "scripts": {
