@@ -1,23 +1,25 @@
 {
   "name": "perfect-boilerplate-node",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Template for create your nodejs backend app in one minute",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.dev.js"
+    "start": "webpack --config webpack.dev.js",
+    "updep": "rm -rf npm-shrinkwrap.json yarn.lock && yarn install && yarn upgrade && npm shrinkwrap"
   },
   "author": "WeslyG",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^1.0.1",
+    "core-js": "^3.2.1",
     "express": "^4.16.4",
     "nodemon-webpack-plugin": "^4.0.7",
-    "webpack": "^4.29.6",
+    "regenerator-runtime": "^0.13.3",
+    "webpack": "^4.39.1",
     "webpack-cli": "^3.2.3"
   }
 }

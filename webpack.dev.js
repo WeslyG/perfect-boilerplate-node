@@ -9,7 +9,7 @@ module.exports = {
     aggregateTimeout: 100
   },
   devtool: 'eval',
-  entry: ["@babel/polyfill", "./app.js"],
+  entry: ["./app.js"],
   target: 'node',
   module: {
     rules: [{
@@ -18,14 +18,28 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env']
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  "node": "current"
+                },
+                useBuiltIns: 'usage',
+                corejs: {
+                  version: 3,
+                  proposals: true
+                }
+              },
+            ],
+          ]
         }
       }
     }]
   },
   plugins: [
     new NodemonPlugin(),
-    new CleanWebpackPlugin(['build/*']),
+    new CleanWebpackPlugin(['build/*'])
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
