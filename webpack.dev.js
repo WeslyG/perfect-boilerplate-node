@@ -1,6 +1,7 @@
 const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -31,14 +32,15 @@ module.exports = {
                   proposals: true
                 }
               },
-            ],
-          ]
+            ]
+          ],
         }
       }
     }]
   },
   plugins: [
     new NodemonPlugin(),
+    new Dotenv(),
     new CleanWebpackPlugin(['build/*'])
   ],
   output: {

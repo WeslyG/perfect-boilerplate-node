@@ -9,8 +9,6 @@ app.get('/', async (req, res) => {
   res.send({ message: r });
 });
 
-app.listen(3000, () => {
-  console.log('I am started on port 3000');
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`I am started on port ${process.env.PORT || 3000}`);
 });
-
-

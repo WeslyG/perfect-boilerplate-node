@@ -6,20 +6,24 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js",
-    "updep": "rm -rf npm-shrinkwrap.json yarn.lock && yarn install && yarn upgrade && npm shrinkwrap"
+    "updep": "rm -rf package-lock.json yarn.lock && yarn install && yarn upgrade && npm i",
+    "dockerBuild": "docker build -t $npm_package_name:$npm_package_version .",
+    "dockerPush": "docker push $npm_package_name:$npm_package_version"
   },
   "author": "WeslyG",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.2.3",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^1.0.1",
     "core-js": "^3.2.1",
-    "express": "^4.16.4",
-    "nodemon-webpack-plugin": "^4.0.7",
-    "regenerator-runtime": "^0.13.3",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.2.3"
+    "clean-webpack-plugin": "^1.0.1",
+    "dotenv-webpack": "^1.7.0",
+    "nodemon-webpack-plugin": "^4.0.7"
   }
 }
