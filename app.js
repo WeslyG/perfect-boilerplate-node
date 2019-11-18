@@ -1,6 +1,7 @@
 //  Es6 imports test
 import express from 'express';
 import { getPromise } from './src/external';
+import { PORT } from './config';
 
 const app = express();
 
@@ -9,6 +10,6 @@ app.get('/', async (req, res) => {
   res.send({ message: r });
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`I am started on port ${process.env.PORT || 3000}`);
+app.listen(PORT, () => {
+  console.log(`I am started on port ${PORT}`);
 });

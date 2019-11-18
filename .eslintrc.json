@@ -1,0 +1,58 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "plugins": [
+      "import",
+      "node",
+      "promise",
+      "sonarjs"
+    ],
+    "settings": {
+      "import/resolver": "webpack"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:sonarjs/recommended",
+      "plugin:promise/recommended"
+      // "plugin:node/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "func-style": [
+            "error",
+            "declaration",
+            { "allowArrowFunctions": true }
+         ],
+         "require-await": [
+           "error"
+         ]
+    }
+}

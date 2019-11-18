@@ -1,11 +1,13 @@
 # Perfect template for start your nodejs backend server (api)
 
-#### Last Update 2019.08
-webpack -  4.39.1
+#### Last Update 2019.11
+webpack -  4.41.2
 
-express - 4.16.4
+express - 4.17.1
 
-@babel/* - 7.5.5 (no @babel/polyfill)
+@babel/* - 7.7.1 (no @babel/polyfill)
+
+eslint - 6.6.0
 
 ### This repo include
 
@@ -15,18 +17,19 @@ express - 4.16.4
   - Webpack liveReload config for dev (include source map)
   - Webpack production ready config
 - Docker for build and production
-  - onbuild container (on alpine include node-gyp modules)
+  - onbuild container (on alpine include node-gyp modules if you need)
   - all build in docker
-  - Not need node/webpack/any other app on your CI agents
-- Debug enabled in vscode (connect to process)
-- npm-shrinkwrap and yarn.lock for dep
-- simple and lightweight (9 dep only)
+  - Not need node/webpack and other on your CI agents
+- package.json and yarn.lock for dep
+- simple and lightweight (1 main dep express)
 
 ### How to use?
 
 - clone this repo
+- rm -rf .git
+- nvm use
+- change data in package.json (dockerlogin, version etc)
 - change any source in app.js or ./src
-- ???
 - Run ```npm start``` for dev run on localhost:3000
 - Run ```npm run build``` for production build in distr dir
 - for docker production build run this:
@@ -37,8 +40,13 @@ express - 4.16.4
 
 - [x] Support Promices and await
 - [ ] Docs add postman and swagger
-- [ ] Config in files for local development and Env for docker
-- [ ] Eslint
+- [x] Config in files for local development and Env for docker
+- [x] Eslint
+- [x] Nvm support and node support in package.json
+- [ ] Debug enabled in vscode (connect to process)
+
+### Optional TODO
+
 - [ ] Metrics to graphite
 - [ ] Logs to Elasticsearch
 - [ ] Wrap to cli

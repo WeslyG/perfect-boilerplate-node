@@ -4,7 +4,7 @@ FROM node:12-alpine AS build
 RUN mkdir -p /usr/app
 WORKDIR /usr/app
 
-COPY [ "package.json", "yarn.lock", "webpack.prod.js", "app.js", "/usr/app/"]
+COPY [ "package.json", "yarn.lock", "webpack.prod.js", "app.js", "config.js", "/usr/app/"]
 
 # if you have any node-gyp modules
 # RUN apk add --no-cache --virtual .build-deps make gcc g++ python \

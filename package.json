@@ -1,29 +1,43 @@
 {
   "name": "perfect-boilerplate-node",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Template for create your nodejs backend app in one minute",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js",
-    "updep": "rm -rf package-lock.json yarn.lock && yarn install && yarn upgrade && npm i",
-    "dockerBuild": "docker build -t $npm_package_name:$npm_package_version .",
-    "dockerPush": "docker push $npm_package_name:$npm_package_version"
+    "lint": "eslint app.js src/",
+    "updep": "rm -rf package-lock.json yarn.lock && yarn && yarn upgrade && npm i",
+    "dockerBuild": "docker build -t $npm_package_dockerLogin/$npm_package_name:$npm_package_version .",
+    "dockerPush": "docker push $npm_package_dockerLogin/$npm_package_name:$npm_package_version"
   },
   "author": "WeslyG",
+  "dockerLogin": "weslyg",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.2.3",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/core": "^7.7.1",
+    "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.5",
-    "core-js": "^3.2.1",
     "clean-webpack-plugin": "^1.0.1",
+    "core-js": "^3.2.1",
     "dotenv-webpack": "^1.7.0",
-    "nodemon-webpack-plugin": "^4.0.7"
+    "eslint": "^6.6.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "nodemon-webpack-plugin": "^4.0.7",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.2.3"
+  },
+  "engines": {
+    "node": "^12.10.0",
+    "npm": "^6.13.0",
+    "yarn": "^1.19.1"
   }
 }
