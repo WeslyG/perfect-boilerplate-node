@@ -1,13 +1,13 @@
 # Perfect template for start your nodejs backend server (api)
 
-#### Last Update 2019.11
-webpack -  4.41.2
+#### Last Update 2020.03
+webpack -  4.42.0
 
 express - 4.17.1
 
-@babel/* - 7.7.1 (no @babel/polyfill)
+@babel/* - 7.8.6 (no @babel/polyfill)
 
-eslint - 6.6.0
+eslint - 6.8.0
 
 ### This repo include
 
@@ -27,6 +27,8 @@ eslint - 6.6.0
 
 - clone this repo
 - rm -rf .git
+- git rm --cached .env
+- add .env to .gitignore
 - nvm use
 - change data in package.json (dockerlogin, version etc)
 - change any source in app.js or ./src
@@ -34,7 +36,7 @@ eslint - 6.6.0
 - Run ```npm run build``` for production build in distr dir
 - for docker production build run this:
   - build your app - ```docker build -t myLoveapp .```
-  - push your docker in registry ```docker push myLoveapp:latest```
+  - run your app in docker ```docker run -d -p $PORT:$PORT myLoveapp```
 
 ### TODO
 

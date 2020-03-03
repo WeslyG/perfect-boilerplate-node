@@ -1,4 +1,4 @@
-//  Es6 imports test
+//  ES6 imports test
 import express from 'express';
 import { getPromise } from './src/external';
 import { PORT } from './config';

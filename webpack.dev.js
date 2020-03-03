@@ -1,16 +1,17 @@
 const path = require('path');
-const NodemonPlugin = require('nodemon-webpack-plugin')
+const NodemonPlugin = require('nodemon-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
   watch: true,
+  stats: 'errors-only',
   watchOptions: {
     aggregateTimeout: 100
   },
   devtool: 'eval',
-  entry: ["./app.js"],
+  entry: ['./app.js'],
   target: 'node',
   module: {
     rules: [{
@@ -24,7 +25,7 @@ module.exports = {
               '@babel/preset-env',
               {
                 targets: {
-                  "node": "current"
+                  'node': 'current'
                 },
                 useBuiltIns: 'usage',
                 corejs: {
