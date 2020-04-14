@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: ["./app.js"],
+  entry: ['./app.js'],
   target: 'node',
   module: {
     rules: [{
@@ -16,7 +16,7 @@ module.exports = {
               '@babel/preset-env',
               {
                 targets: {
-                  "node": "current"
+                  'node': 'current'
                 },
                 useBuiltIns: 'usage',
                 corejs: {

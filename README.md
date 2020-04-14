@@ -1,11 +1,11 @@
 # Perfect template for start your nodejs backend server (api)
 
-#### Last Update 2020.03
-webpack -  4.42.0
+#### Last Update 2020.04
+webpack -  4.42.1
 
 express - 4.17.1
 
-@babel/* - 7.8.6 (no @babel/polyfill)
+@babel/* - 7.9.0 (no @babel/polyfill)
 
 eslint - 6.8.0
 
@@ -41,11 +41,12 @@ eslint - 6.8.0
 ### TODO
 
 - [x] Support Promices and await
-- [ ] Docs add postman and swagger
 - [x] Config in files for local development and Env for docker
 - [x] Eslint
 - [x] Nvm support and node support in package.json
-- [ ] Debug enabled in vscode (connect to process)
+- [x] Debug enabled in vscode (connect to process)
+- [ ] Docs add postman and swagger
+
 
 ### Optional TODO
 

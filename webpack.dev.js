@@ -1,6 +1,6 @@
 const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
   watchOptions: {
     aggregateTimeout: 100
   },
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   entry: ['./app.js'],
   target: 'node',
   module: {
@@ -40,9 +40,11 @@ module.exports = {
     }]
   },
   plugins: [
-    new NodemonPlugin(),
+    new NodemonPlugin({
+      nodeArgs: ['--inspect', '--nolazy']
+    }),
     new Dotenv(),
-    new CleanWebpackPlugin(['build/*'])
+    new CleanWebpackPlugin()
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
