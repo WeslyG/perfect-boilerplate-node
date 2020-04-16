@@ -11,5 +11,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`I am started on port ${PORT}`);
+  console.log(`Started on port ${PORT}`);
 });

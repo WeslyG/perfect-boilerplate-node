@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
+  stats: 'errors-only',
   entry: ['./app.js'],
   target: 'node',
   module: {
