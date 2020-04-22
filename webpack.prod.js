@@ -8,26 +8,16 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      exclude: /node_modules/,
+      include: [
+        '/src/',
+        '/**/*.js'
+      ],
+      exclude: [
+        '/node_modules/',
+        '/**/*.spec.js'
+      ],
       use: {
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  'node': 'current'
-                },
-                useBuiltIns: 'usage',
-                corejs: {
-                  version: 3,
-                  proposals: true
-                }
-              },
-            ],
-          ]
-        }
+        loader: 'babel-loader'
       }
     }]
   },

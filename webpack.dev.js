@@ -18,24 +18,7 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       use: {
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  'node': 'current'
-                },
-                useBuiltIns: 'usage',
-                corejs: {
-                  version: 3,
-                  proposals: true
-                }
-              },
-            ]
-          ],
-        }
+        loader: 'babel-loader'
       }
     }]
   },
