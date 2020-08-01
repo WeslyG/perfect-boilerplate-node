@@ -3,8 +3,7 @@ FROM node:12-alpine AS build
 
 RUN mkdir -p /usr/app
 WORKDIR /usr/app
-
-COPY [ "package.json", "yarn.lock", "webpack.prod.js", "app.js", "config.js", "/usr/app/"]
+COPY package*.json yarn.* /usr/app/
 
 # if you have any node-gyp modules
 # RUN apk add --no-cache --virtual .build-deps make gcc g++ python \
@@ -12,7 +11,7 @@ COPY [ "package.json", "yarn.lock", "webpack.prod.js", "app.js", "config.js", "/
 #     && apk del .build-deps
 
 RUN yarn
-COPY ./src /usr/app/src/
+COPY . /usr/app/
 RUN npm run build
 
 # run contaier

@@ -1,11 +1,21 @@
 //  ES6 imports test
 import express from 'express';
-import { getPromise } from './src/external';
 import { PORT } from './config';
+import { getPromise } from './src/external';
+import {version, name } from './package.json';
 
 const app = express();
 
-app.get('/', async (req, res) => {
+// kube healthcheck
+app.get('/', (req, res) => {
+  res.send({
+    message: 'ok',
+    version: version,
+    name: name
+  });
+});
+
+app.get('/test', async (req, res) => {
   const r = await getPromise();
   res.send({ message: r });
 });

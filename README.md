@@ -1,13 +1,13 @@
 # Perfect template for start your nodejs backend server (api)
 
-#### Last Update 2020.04
-webpack -  4.42.1
+#### Last Update 2020.08
+webpack -  4.44.1
 
 express - 4.17.1
 
-@babel/* - 7.9.0 (no @babel/polyfill)
+@babel/* - 7.11.0 (no @babel/polyfill)
 
-eslint - 6.8.0
+eslint - 7.6.0
 
 ### This repo include
 
@@ -21,27 +21,22 @@ eslint - 6.8.0
   - onbuild container (on alpine include node-gyp modules if you need)
   - all build in docker
   - Not need node/webpack and other on your CI agents
-- package.json and yarn.lock for dep
 - simple and lightweight (1 main dep express)
 
 ### How to use?
 
 - clone this repo
 - rm -rf .git
-- git rm --cached .env
-- add .env to .gitignore
 - nvm use
 - change data in package.json (dockerlogin, version etc)
-- change any source in app.js or ./src
-- Run ```npm start``` for dev run on localhost:3000
+- Run ```npm start``` for dev run on `localhost:3000`
+
 - Run ```npm run build``` for production build in distr dir
-- for docker production build run this:
-  - build your app - ```docker build -t myLoveapp .```
-  - run your app in docker ```docker run -d -p $PORT:$PORT myLoveapp```
+- for docker production build run this ```npm dockerBuild```
 
 ### TODO
 
-- [x] Support Promices and await
+- [x] Support Promices and await and es6 imports
 - [x] Config in files for local development and Env for docker
 - [x] Eslint
 - [x] Nvm support and node support in package.json
