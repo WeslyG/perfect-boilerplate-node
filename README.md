@@ -21,7 +21,7 @@ eslint - 7.6.0
   - onbuild container (on alpine include node-gyp modules if you need)
   - all build in docker
   - Not need node/webpack and other on your CI agents
-- simple and lightweight (1 main dep express)
+- simple and lightweight (2 main dep express and mongoose)
 
 ### How to use?
 

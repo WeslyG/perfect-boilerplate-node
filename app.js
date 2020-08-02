@@ -7,6 +7,7 @@ import { connectMongo } from './src/utils/mongo';
 import { corsDisable } from './src/utils/cors';
 
 const app = express();
+app.use(express.json());
 connectMongo();
 
 // Disable cors in dev
