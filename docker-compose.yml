@@ -1,16 +1,15 @@
 version: '3'
 
 services:
-  backend:
-    build: .
-    ports:
-      - 3000:3000
-    # depends_on:
-    #   - mongo
-    environment:
-      - PORT=3000
-  # db if need
-  # mongo:
-  #   image: mongo
+  # backend:
+  #   build: .
   #   ports:
-  #   - 27017:27017
+  #     - 3000:3000
+  #   depends_on:
+  #     - mongo
+  #   environment:
+  #     - PORT=3000
+  mongo:
+    image: mongo
+    ports:
+    - 27017:27017

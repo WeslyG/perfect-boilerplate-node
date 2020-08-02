@@ -1,14 +1,31 @@
 {
-  "version": "1.0.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach Debug",
-      "port": 9229,
-      "restart": true,
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
-    }]
+  "version": "2.0.0",
+  "configurations": [{
+    "type": "node",
+    "request": "attach",
+    "name": "Attach Debug",
+    "port": 9229,
+    "restart": true,
+    "skipFiles": [
+      "<node_internals>/**"
+    ]
+  }, {
+    "name": "Run mocha debug",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+    "stopOnEntry": false,
+    "sourceMaps": true,
+    "args": ["--exit", "--require", "@babel/register", "--delay", "./**/*.spec.js"],
+    "cwd": "${workspaceRoot}",
+    "runtimeExecutable": null,
+    "runtimeArgs": [
+      "--nolazy"
+    ],
+    "env": {
+      "NODE_ENV": "testing",
+      "PORT": "3333",
+      "MONGO_URL": "localhost:27122"
+    }
+  }]
 }
