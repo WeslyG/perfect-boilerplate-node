@@ -1,5 +1,6 @@
 ./etc
 ./dist
+./build
 ./tests
 ./build
 ./vscode

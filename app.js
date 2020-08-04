@@ -6,12 +6,13 @@ import {version, name } from './package.json';
 import { connectMongo } from './src/utils/mongo';
 import { corsDisable } from './src/utils/cors';
 
+const NODE_ENV = process.env.NODE_ENV;
 const app = express();
 app.use(express.json());
 connectMongo();
 
 // Disable cors in dev
-if (process.env.NODE_ENV === 'development') {
+if (NODE_ENV === 'development') {
   corsDisable(app);
 }
 
@@ -30,7 +31,7 @@ app.get('/test', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`App started on port ${PORT}`);
+  console.log(`App started in ${NODE_ENV} mode on port ${PORT}`);
 });
 
 export default app;

@@ -1,14 +1,14 @@
 {
   "name": "perfect-boilerplate-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Template for create your nodejs backend app in one minute",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js",
     "lint": "eslint app.js src/",
-    "updep": "rm -rf node_modules package-lock.json yarn.lock npm-shrinkwrap.json && yarn && yarn upgrade && npm i",
-    "test": "PORT=3333 MONGO_URL='localhost:27122' mocha --exit --timeout 10000 --require @babel/register --delay ./**/*.spec.js",
+    "updep": "rm -rf package-lock.json yarn.lock npm-shrinkwrap.json && yarn && yarn upgrade && npm i",
+    "test": "NODE_ENV=test PORT=3333 MONGO_URL='localhost:27122' mocha --require dotenv/config --exit --timeout 10000 --require @babel/register --delay ./**/*.spec.js",
     "dockerBuild": "docker build -t $npm_package_dockerLogin/$npm_package_name:$npm_package_version .",
     "dockerPush": "docker push $npm_package_dockerLogin/$npm_package_name:$npm_package_version"
   },
@@ -46,6 +46,7 @@
     "chai-http": "^4.3.0",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
+    "dotenv": "^8.2.0",
     "dotenv-webpack": "^2.0.0",
     "eslint": "^7.6.0",
     "eslint-import-resolver-webpack": "^0.12.2",
