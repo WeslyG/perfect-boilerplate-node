@@ -1,12 +1,11 @@
 //  ES6 imports test
 import express from 'express';
-import { PORT } from './config';
+import { PORT, NODE_ENV } from './config';
 import { getPromise } from './src/controllers/external';
 import {version, name } from './package.json';
 import { connectMongo } from './src/utils/mongo';
 import { corsDisable } from './src/utils/cors';
 
-const NODE_ENV = process.env.NODE_ENV;
 const app = express();
 app.use(express.json());
 connectMongo();

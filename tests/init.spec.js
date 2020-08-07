@@ -1,12 +1,13 @@
 import mongoUnit from 'mongo-unit';
+import { MONGO_URL } from '../config';
 
 mongoUnit.start({
   dbName: 'testDb',
-  port: process.env.MONGO_URL.split(':')[1]
+  port: MONGO_URL.split(':')[1]
 })
   .then(() => {
-    let mongo_url = mongoUnit.getUrl().match(/(mongodb:\/\/)(.*)\//)[2];
-    console.log(`Fake mongo is started: ${mongo_url}`);
+    let mongoUrl = mongoUnit.getUrl().match(/(mongodb:\/\/)(.*)\//)[2];
+    console.log(`Fake mongo is started: ${mongoUrl}`);
     run();
     return null;
   })

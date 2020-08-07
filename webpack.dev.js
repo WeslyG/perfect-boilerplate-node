@@ -26,7 +26,9 @@ module.exports = {
     new NodemonPlugin({
       nodeArgs: ['--inspect', '--nolazy']
     }),
-    new Dotenv(),
+    new Dotenv({
+      path: './.env.dev'
+    }),
     new CleanWebpackPlugin()
   ],
   output: {
