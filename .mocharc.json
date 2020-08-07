@@ -1,0 +1,17 @@
+{
+  "extension": ["js"],
+  "package": "./package.json",
+  "reporter": "spec",
+  "slow": 500,
+  "timeout": 2000,
+  "ui": "bdd",
+  "diff": true,
+  "exit": true,
+  "delay": true,
+  "color": true,
+  "recursive": true,
+  "sort": true,
+  "require": ["@babel/register", "dotenv/config"],
+  "spec": ["./**/*.spec.js"],
+  "watch-files": ["./**/*.spec.js"]
+}

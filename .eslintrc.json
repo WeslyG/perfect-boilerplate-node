@@ -19,8 +19,8 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:sonarjs/recommended",
-    "plugin:promise/recommended"
-    // "plugin:node/recommended"
+    "plugin:promise/recommended",
+    "plugin:node/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -31,6 +31,10 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-process-env": [ "error" ],
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-unpublished-require": "off",
+    "node/no-unpublished-import": "off",
     "no-unused-vars": [
       "warn"
     ],
