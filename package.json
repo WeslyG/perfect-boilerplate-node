@@ -1,12 +1,13 @@
 {
   "name": "perfect-boilerplate-node",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Template for create your nodejs backend app in one minute",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js",
-    "lint": "eslint app.js src/",
+    "lint": "eslint app.js src/ tests/",
+    "prettier": "prettier --check ./src ./tests",
     "updep": "rm -rf package-lock.json yarn.lock npm-shrinkwrap.json && yarn && yarn upgrade && npm i",
     "test": "DOTENV_CONFIG_PATH=./.env.test mocha",
     "dockerBuild": "docker build -t $npm_package_dockerLogin/$npm_package_name:$npm_package_version .",

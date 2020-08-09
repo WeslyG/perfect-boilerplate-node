@@ -1,9 +1,9 @@
 {
   "parser": "babel",
   "printWidth": 100,
-  "tabWidth": 4,
+  "tabWidth": 2,
   "trailingComma": "es5",
   "endOfLine": "lf",
-  "semi": false,
+  "semi": true,
   "singleQuote": true
 }
