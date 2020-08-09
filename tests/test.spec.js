@@ -10,7 +10,8 @@ describe('[API] Test link', () => {
   afterEach(() => mongoUnit.drop());
 
   it('Test', done => {
-    chai.request(app)
+    chai
+      .request(app)
       .get('/test')
       .end((err, res) => {
         should.exist(res.body);

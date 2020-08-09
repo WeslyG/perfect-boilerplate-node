@@ -11,7 +11,8 @@ describe('[API] Healthcheck', () => {
   afterEach(() => mongoUnit.drop());
 
   it('Create healthcheck', done => {
-    chai.request(app)
+    chai
+      .request(app)
       .get('/')
       .end((err, res) => {
         should.exist(res.body);
