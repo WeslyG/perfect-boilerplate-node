@@ -8,31 +8,33 @@ module.exports = {
   watch: true,
   stats: 'errors-only',
   watchOptions: {
-    aggregateTimeout: 100
+    aggregateTimeout: 100,
   },
   devtool: 'inline-source-map',
   entry: ['./app.js'],
   target: 'node',
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader'
-      }
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
   plugins: [
     new NodemonPlugin({
-      nodeArgs: ['--inspect', '--nolazy']
+      nodeArgs: ['--inspect', '--nolazy'],
     }),
     new Dotenv({
-      path: './.env.dev'
+      path: './.env.dev',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.dev.js'
+    filename: 'bundle.dev.js',
   },
 };

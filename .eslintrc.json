@@ -35,9 +35,12 @@
     "node/no-unsupported-features/es-syntax": "off",
     "node/no-unpublished-require": "off",
     "node/no-unpublished-import": "off",
-    "no-unused-vars": [
-      "warn"
-    ],
+    "no-unused-vars": [ "warn" ],
+    "semi": ["error", "always"],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "require-await": ["error"],
     "arrow-parens": [
       "error",
       "as-needed",
@@ -45,27 +48,11 @@
         "requireForBlockBody": false
       }
     ],
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
     "camelcase": [
       "error",
       {
         "properties": "always"
       }
-    ],
-    "semi": [
-      "error",
-      "always"
     ],
     "func-style": [
       "error",
@@ -73,9 +60,6 @@
       {
         "allowArrowFunctions": true
       }
-    ],
-    "require-await": [
-      "error"
     ]
   }
 }

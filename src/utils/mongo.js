@@ -1,11 +1,5 @@
 import mongoose from 'mongoose';
-import {
-  MONGO_USER,
-  MONGO_PASSWORD,
-  MONGO_DB_NAME,
-  MONGO_URL
-} from '../../config';
-
+import { MONGO_USER, MONGO_PASSWORD, MONGO_DB_NAME, MONGO_URL } from '../../config';
 
 export const connectMongo = async () => {
   let connect = '';

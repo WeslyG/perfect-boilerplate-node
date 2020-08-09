@@ -2,7 +2,7 @@
 import express from 'express';
 import { PORT, NODE_ENV } from './config';
 import { getPromise } from './src/controllers/external';
-import {version, name } from './package.json';
+import { version, name } from './package.json';
 import { connectMongo } from './src/utils/mongo';
 import { corsDisable } from './src/utils/cors';
 
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   res.send({
     message: 'ok',
     version: version,
-    name: name
+    name: name,
   });
 });
 

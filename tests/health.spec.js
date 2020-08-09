@@ -2,7 +2,7 @@ import app from '../app';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import mongoUnit from 'mongo-unit';
-import {version, name } from '../package.json';
+import { version, name } from '../package.json';
 
 const should = chai.should();
 chai.use(chaiHttp);
