@@ -1,13 +1,15 @@
 import mongoUnit from 'mongo-unit';
 import { MONGO_URL } from '../config';
 
+const MONGO_PORT: number = parseInt(MONGO_URL.split(':')[1]);
+
 mongoUnit
   .start({
     dbName: 'testDb',
-    port: MONGO_URL.split(':')[1],
+    port: MONGO_PORT,
   })
   .then(() => {
-    let mongoUrl = mongoUnit.getUrl().match(/(mongodb:\/\/)(.*)\//)[2];
+    const mongoUrl: string = mongoUnit.getUrl();
     console.log(`Fake mongo is started: ${mongoUrl}`);
     run();
     return null;

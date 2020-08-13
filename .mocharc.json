@@ -1,5 +1,5 @@
 {
-  "extension": ["js"],
+  "extension": ["js", "ts"],
   "package": "./package.json",
   "reporter": "spec",
   "slow": 500,
@@ -11,7 +11,7 @@
   "color": true,
   "recursive": true,
   "sort": true,
-  "require": ["@babel/register", "dotenv/config"],
-  "spec": ["./**/*.spec.js"],
-  "watch-files": ["./**/*.spec.js"]
+  "require": ["ts-node/register", "dotenv/config"],
+  "spec": ["./**/*.spec.ts"],
+  "watch-files": ["./**/*.spec.ts"]
 }

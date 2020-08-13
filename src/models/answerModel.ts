@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose';
+import { IAnswerModel } from '../interfaces/AnswerModel';
 
-const answerShema = new Schema(
+const answerShema: Schema = new Schema(
   {
     name: {
       type: String,
@@ -23,9 +24,9 @@ const answerShema = new Schema(
 answerShema.set('toJSON', {
   virtuals: true,
   versionKey: false,
-  transform: (doc, ret) => {
+  transform: (_, ret) => {
     delete ret._id;
   },
 });
 
-export const AnswerModel = model('answerModel', answerShema);
+export const AnswerModel = model < IAnswerModel > ('AnswerModel', answerShema);

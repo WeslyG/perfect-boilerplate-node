@@ -1,0 +1,36 @@
+{
+  /* Editor config */
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  // "editor.formatOnType": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.filterGraceful": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.wordBasedSuggestions": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  /* Linters js/ts config */
+  "eslint.enable": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "debug.javascript.usePreview": false,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

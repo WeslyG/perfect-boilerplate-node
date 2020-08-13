@@ -19,25 +19,14 @@
       "stopOnEntry": false,
       "sourceMaps": true,
       "args": [
-        "--require",
-        "dotenv/config",
-        "--exit",
-        "--colors",
-        "--require",
-        "@babel/register",
-        "--delay",
-        "./**/*.spec.js"
+        "DOTENV_CONFIG_PATH=./.env.test"
       ],
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": null,
       "runtimeArgs": [
+        "--inspect",
         "--nolazy"
-      ],
-      "env": {
-        "NODE_ENV": "test",
-        "PORT": "3333",
-        "MONGO_URL": "localhost:27122"
-      }
+      ]
     }
   ]
 }

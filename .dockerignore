@@ -1,19 +1,17 @@
+./.git
 ./etc
 ./dist
 ./build
 ./tests
 ./build
 ./vscode
+./coverage
 ./node_modules
 
 Dockerfile
 docker-compose.yml
 
-.gitignore
-.nvmrc
-.env
-.editorconfig
+.*
 
-eslintrc.json
 webpack.dev.js
 README.md

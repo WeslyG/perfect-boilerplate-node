@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "env": {
     "node": true,
     "es6": true,
@@ -9,13 +9,23 @@
     "import",
     "node",
     "promise",
-    "sonarjs"
+    "sonarjs",
+    "@typescript-eslint"
   ],
   "settings": {
-    "import/resolver": "webpack"
+    // "import/resolver": "webpack",
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".ts"
+        ]
+      }
+    }
   },
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:sonarjs/recommended",
@@ -31,16 +41,48 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-process-env": [ "error" ],
-    "node/no-unsupported-features/es-syntax": "off",
+    "indent": [
+      "off"
+    ],
+    "semi": [
+      "off"
+    ],
+    "quotes": [
+      "off"
+    ],
+    "linebreak-style": [
+      "off"
+    ],
     "node/no-unpublished-require": "off",
     "node/no-unpublished-import": "off",
-    "no-unused-vars": [ "warn" ],
-    "semi": ["error", "always"],
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "require-await": ["error"],
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-import": [
+      "error",
+      {
+        "allowModules": [],
+        "resolvePaths": [
+          "."
+        ],
+        "tryExtensions": [
+          ".js",
+          ".ts",
+          ".json"
+        ]
+      }
+    ],
+    "no-process-env": [
+      "error"
+    ],
+    "object-shorthand": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": [
+      "warn"
+    ],
+    "require-await": [
+      "error"
+    ],
     "arrow-parens": [
       "error",
       "as-needed",

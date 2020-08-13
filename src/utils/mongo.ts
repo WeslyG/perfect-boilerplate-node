@@ -1,15 +1,13 @@
 import mongoose from 'mongoose';
 import { MONGO_USER, MONGO_PASSWORD, MONGO_DB_NAME, MONGO_URL } from '../../config';
 
-export const connectMongo = async () => {
-  let connect = '';
-  if (MONGO_USER !== '' && MONGO_PASSWORD !== '') {
-    connect = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_URL}/${MONGO_DB_NAME}`;
-  } else {
-    connect = `mongodb://${MONGO_URL}/${MONGO_DB_NAME}`;
-  }
+export const connectMongo = async (): Promise<void> => {
+  const connectUrl: string =
+    MONGO_USER !== '' && MONGO_PASSWORD !== ''
+      ? `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_URL}/${MONGO_DB_NAME}`
+      : `mongodb://${MONGO_URL}/${MONGO_DB_NAME}`;
   try {
-    await mongoose.connect(connect, {
+    await mongoose.connect(connectUrl, {
       useFindAndModify: false,
       useUnifiedTopology: true,
       useCreateIndex: true,

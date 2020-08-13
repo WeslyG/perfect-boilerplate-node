@@ -11,15 +11,15 @@ module.exports = {
     aggregateTimeout: 100,
   },
   devtool: 'inline-source-map',
-  entry: ['./app.js'],
+  entry: ['./app.ts'],
   target: 'node',
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
         },
       },
     ],

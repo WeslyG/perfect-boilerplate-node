@@ -1,0 +1,13 @@
+.vscode/
+.git/
+build/
+coverage/
+node_modules/
+Dockerfile
+
+.*
+*.json
+*.yml
+*.md
+*.lock
+webpack.*.js
