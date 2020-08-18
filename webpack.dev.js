@@ -24,6 +24,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.ts', '.js', '.json'],
+  },
   plugins: [
     new NodemonPlugin({
       nodeArgs: ['--inspect', '--nolazy'],

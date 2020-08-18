@@ -13,7 +13,6 @@
     "@typescript-eslint"
   ],
   "settings": {
-    // "import/resolver": "webpack",
     "import/resolver": {
       "node": {
         "extensions": [

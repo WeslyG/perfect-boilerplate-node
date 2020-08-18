@@ -8,14 +8,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\(.ts|.js)$/,
-        include: ['/src/', '/**/*.ts'],
+        test: /\.(ts|.js)$/,
         exclude: ['/node_modules/', '/**/*.spec.ts', '/**/*.spec.js'],
         use: {
           loader: 'ts-loader',
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json'],
   },
   output: {
     path: path.resolve(__dirname, 'build'),

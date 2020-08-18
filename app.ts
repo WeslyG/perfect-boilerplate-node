@@ -11,9 +11,7 @@ app.use(express.json());
 connectMongo();
 
 // Disable cors in dev
-if (NODE_ENV === 'development') {
-  corsDisable(app);
-}
+if (NODE_ENV === 'development') corsDisable(app);
 
 // k8s healthcheck
 app.get('/', (_, res: Response<{ message: string, name: string, version: string }>) => {
